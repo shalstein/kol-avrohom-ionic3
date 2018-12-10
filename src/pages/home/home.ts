@@ -14,6 +14,6 @@ export class HomePage {
 
   handleSederClick = (seder) => {
     console.log('clicked ' + seder)
-    this.navCtrl.push(TractatesPage);
+    this.navCtrl.push(TractatesPage, {seder: seder});
   }
 }

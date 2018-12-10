@@ -7,12 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>tractates</ion-title>
+    <ion-title>{{currentSeder}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <button ion-item *ngFor="let mesechta of mesechtos[currentSeder]">
+      {{mesechta}}
+    </button>
+  </ion-list>
 </ion-content>
