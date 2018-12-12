@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let mesechta of mesechtos[currentSeder]">
+    <button (click)="handleTractateClick(mesechta)" ion-item *ngFor="let mesechta of mesechtos[currentSeder]">
       {{mesechta}}
     </button>
   </ion-list>
