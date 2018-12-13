@@ -24,4 +24,6 @@ export class TractatePage {
 
   }
 
+  currentDaf = '02.mp3';
+
 }

@@ -1,3 +1,19 @@
 page-tractate {
 
+    #daf-input {
+        width: 2em;
+    }
+    
+    ion-label {
+        position: absolute;
+        right: 0%;
+        height: 100%;
+    }
+    .select-icon-inner{
+        left: 1em;
+
+    }
+    .select-icon {
+        position: static;
+    }
 }

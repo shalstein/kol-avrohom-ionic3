@@ -14,89 +14,23 @@
 
 
 <ion-content padding>
-  <label>Select a daf:</label> <input type="text">
-  <ion-select class="test" >
-    <ion-option value="">- דף -</ion-option>
-    <ion-option value="02.mp3">דף ב</ion-option>
-    <ion-option value="03.mp3">דף ג</ion-option>
-    <ion-option value="04.mp3">דף ד</ion-option>
-    <ion-option value="05.mp3">דף ה</ion-option>
-    <ion-option value="06.mp3">דף ו</ion-option>
-    <ion-option value="07.mp3">דף ז</ion-option>
-    <ion-option value="08.mp3">דף ח</ion-option>
-    <ion-option value="09.mp3">דף ט</ion-option>
-    <ion-option value="10.mp3">דף י</ion-option>
-    <ion-option value="11.mp3">דף יא</ion-option>
-    <ion-option value="12.mp3">דף יב</ion-option>
-    <ion-option value="13.mp3">דף יג</ion-option>
-    <ion-option value="14.mp3">דף יד</ion-option>
-    <ion-option value="15.mp3">דף טו</ion-option>
-    <ion-option value="16.mp3">דף טז</ion-option>
-    <ion-option value="17.mp3">דף יז</ion-option>
-    <ion-option value="18.mp3">דף יח</ion-option>
-    <ion-option value="19.mp3">דף יט</ion-option>
-    <ion-option value="20.mp3">דף כ</ion-option>
-    <ion-option value="21.mp3">דף כא</ion-option>
-    <ion-option value="22.mp3">דף כב</ion-option>
-    <ion-option value="23.mp3">דף כג</ion-option>
-    <ion-option value="24.mp3">דף כד</ion-option>
-    <ion-option value="25.mp3">דף כה</ion-option>
-    <ion-option value="26.mp3">דף כו</ion-option>
-    <ion-option value="27.mp3">דף כז</ion-option>
-    <ion-option value="28.mp3">דף כח</ion-option>
-    <ion-option value="29.mp3">דף כט</ion-option>
-    <ion-option value="30.mp3">דף ל</ion-option>
-    <ion-option value="31.mp3">דף לא</ion-option>
-    <ion-option value="32.mp3">דף לב</ion-option>
-    <ion-option value="33.mp3">דף לג</ion-option>
-    <ion-option value="34.mp3">דף לד</ion-option>
-    <ion-option value="35.mp3">דף לה</ion-option>
-    <ion-option value="36.mp3">דף לו</ion-option>
-    <ion-option value="37.mp3">דף לז</ion-option>
-    <ion-option value="38.mp3">דף לח</ion-option>
-    <ion-option value="39.mp3">דף לט</ion-option>
-    <ion-option value="40.mp3">דף מ</ion-option>
-    <ion-option value="41.mp3">דף מא</ion-option>
-    <ion-option value="42.mp3">דף מב</ion-option>
-    <ion-option value="43.mp3">דף מג</ion-option>
-    <ion-option value="44.mp3">דף מד</ion-option>
-    <ion-option value="45.mp3">דף מה</ion-option>
-    <ion-option value="46.mp3">דף מו</ion-option>
-    <ion-option value="47.mp3">דף מז</ion-option>
-    <ion-option value="48.mp3">דף מח</ion-option>
-    <ion-option value="49.mp3">דף מט</ion-option>
-    <ion-option value="50.mp3">דף נ</ion-option>
-    <ion-option value="51.mp3">דף נא</ion-option>
-    <ion-option value="52.mp3">דף נב</ion-option>
-    <ion-option value="53.mp3">דף נג</ion-option>
-    <ion-option value="54.mp3">דף נד</ion-option>
-    <ion-option value="55.mp3">דף נה</ion-option>
-    <ion-option value="56.mp3">דף נו</ion-option>
-    <ion-option value="57.mp3">דף נז</ion-option>
-    <ion-option value="58.mp3">דף נח</ion-option>
-    <ion-option value="59.mp3">דף נט</ion-option>
-    <ion-option value="60.mp3">דף ס</ion-option>
-    <ion-option value="61.mp3">דף סא</ion-option>
-    <ion-option value="62.mp3">דף סב</ion-option>
-    <ion-option value="63.mp3">דף סג</ion-option>
-    <ion-option value="64.mp3">דף סד</ion-option>
-    <ion-option value="65.mp3">דף סה</ion-option>
-    <ion-option value="66.mp3">דף סו</ion-option>
-    <ion-option value="67.mp3">דף סז</ion-option>
-    <ion-option value="68.mp3">דף סח</ion-option>
-    <ion-option value="69.mp3">דף סט</ion-option>
-    <ion-option value="70.mp3">דף ע</ion-option>
-    <ion-option value="71.mp3">דף עא</ion-option>
-    <ion-option value="72.mp3">דף עב</ion-option>
-    <ion-option value="73.mp3">דף עג</ion-option>
-    <ion-option value="74.mp3">דף עד</ion-option>
-    <ion-option value="75.mp3">דף עה</ion-option>
-    <ion-option value="76.mp3">דף עו</ion-option>
-    <ion-option value="77.mp3">דף עז</ion-option>
-    <ion-option value="78.mp3">דף עח</ion-option>
-    <ion-option value="79.mp3">דף עט</ion-option>
-    <ion-option value="80.mp3">דף פ</ion-option>
-    <ion-option value="81.mp3">דף פא</ion-option>
-    <ion-option value="82.mp3">דף פב</ion-option>
-    </ion-select>
+  <div id='select-daf'>
+    <input id="daf-input" type="text">
+    <ion-item>
+     <ion-label >דף</ion-label> 
+      <ion-select [(ngModel)]="currentDaf" interface='popover'>
+        <ion-option value="02.mp3">ב</ion-option>
+        <ion-option value="03.mp3">ג</ion-option>
+        <ion-option value="04.mp3">ד</ion-option>
+        <ion-option value="05.mp3">ה</ion-option>
+        <ion-option value="06.mp3">ו</ion-option>
+        <ion-option value="07.mp3">ז</ion-option>
+        <ion-option value="08.mp3">ח</ion-option>
+        <ion-option value="09.mp3">ט</ion-option>
+        <ion-option value="10.mp3">י</ion-option>
+        <ion-option value="11.mp3">יא</ion-option>
+        <ion-option value="12.mp3">יב</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
 </ion-content>
