@@ -15,21 +15,20 @@
 
 <ion-content padding>
   <div id='select-daf'>
-    <input id="daf-input" type="text">
     <ion-item>
      <ion-label >דף</ion-label> 
-      <ion-select [(ngModel)]="currentDaf" interface='popover'>
-        <ion-option value="02.mp3">ב</ion-option>
-        <ion-option value="03.mp3">ג</ion-option>
-        <ion-option value="04.mp3">ד</ion-option>
-        <ion-option value="05.mp3">ה</ion-option>
-        <ion-option value="06.mp3">ו</ion-option>
-        <ion-option value="07.mp3">ז</ion-option>
-        <ion-option value="08.mp3">ח</ion-option>
-        <ion-option value="09.mp3">ט</ion-option>
-        <ion-option value="10.mp3">י</ion-option>
-        <ion-option value="11.mp3">יא</ion-option>
-        <ion-option value="12.mp3">יב</ion-option>
+      <ion-select [(ngModel)]="currentDaf" interface='action-sheet'>
+        <ion-option value="02">ב</ion-option>
+        <ion-option value="03">ג</ion-option>
+        <ion-option value="04">ד</ion-option>
+        <ion-option value="05">ה</ion-option>
+        <ion-option value="06">ו</ion-option>
+        <ion-option value="07">ז</ion-option>
+        <ion-option value="08">ח</ion-option>
+        <ion-option value="09">ט</ion-option>
+        <ion-option value="10">י</ion-option>
+        <ion-option value="11">יא</ion-option>
+        <ion-option value="12">יב</ion-option>
       </ion-select>
     </ion-item>
   </div>

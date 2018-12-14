@@ -24,6 +24,11 @@ export class TractatePage {
 
   }
 
-  currentDaf = '02.mp3';
+  currentDaf = '02';
+
+  handleDafInputChange = (event) => {
+    console.log(event)
+    this.currentDaf = event.target.value;
+  }
 
 }
