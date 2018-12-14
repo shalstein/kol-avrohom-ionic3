@@ -14,10 +14,9 @@
 
 
 <ion-content padding>
-  <div id='select-daf'>
     <ion-item>
-     <ion-label >דף</ion-label> 
-      <ion-select [(ngModel)]="currentDaf" interface='action-sheet'>
+      <ion-label >דף</ion-label> 
+      <ion-select (ionChange)="handleSelectDafChange(audioPlayer)" [(ngModel)]="currentDaf" interface='action-sheet'>
         <ion-option value="02">ב</ion-option>
         <ion-option value="03">ג</ion-option>
         <ion-option value="04">ד</ion-option>
@@ -31,5 +30,8 @@
         <ion-option value="12">יב</ion-option>
       </ion-select>
     </ion-item>
-  </div>
+  <audio #audioPlayer controls>
+    <source src="http://download.kolavrohom.com/Eruvin/06.mp3" type='audio/mp3' >
+      <p>Your browser doesn't support HTML5 audio. Here is a <a href="http://download.kolavrohom.com/Eruvin/06.mp3">link to the audio</a> instead.</p>
+  </audio>
 </ion-content>

@@ -31,4 +31,7 @@ export class TractatePage {
     this.currentDaf = event.target.value;
   }
 
+  handleSelectDafChange = audioPlayer => audioPlayer.play();
+  
+
 }
