@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import gematriya from 'js-gematriya';
 /**
  * Generated class for the TractatePage page.
  *
@@ -15,19 +15,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TractatePage {
   tractate : string;
+  tractatePages = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.tractate = this.navParams.get('tractate');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TractatePage' + this.tractate);
 
+  generateTractatePages = (lastPage) => {
+    const pages = []
+    for(let i = 2; i <= lastPage; i++){
+      pages.push(gematriya(i, {punctuate: false}))
+    }
+    return pages
   }
 
-  currentDaf = '02';
+
+  ionViewDidLoad() {
+    this.tractatePages = this.generateTractatePages(this.lastPage);
+    console.log(this.tractatePages)
+  }
+
+  currentDaf = '2';
+
+  lastPage = 9;
 
   handleDafInputChange = (event) => {
-    console.log(event)
     this.currentDaf = event.target.value;
   }
 

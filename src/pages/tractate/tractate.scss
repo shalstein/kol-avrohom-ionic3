@@ -12,4 +12,12 @@ page-tractate {
     .select-icon {
         position: static !important ;
     }
+    #audio-wrapper {
+        text-align: center;
+    }
+    #audio-player {
+        display: block;
+        margin: 3em auto;
+    }
+
 }

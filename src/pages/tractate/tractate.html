@@ -16,22 +16,12 @@
 <ion-content padding>
     <ion-item>
       <ion-label >דף</ion-label> 
-      <ion-select (ionChange)="handleSelectDafChange(audioPlayer)" [(ngModel)]="currentDaf" interface='action-sheet'>
-        <ion-option value="02">ב</ion-option>
-        <ion-option value="03">ג</ion-option>
-        <ion-option value="04">ד</ion-option>
-        <ion-option value="05">ה</ion-option>
-        <ion-option value="06">ו</ion-option>
-        <ion-option value="07">ז</ion-option>
-        <ion-option value="08">ח</ion-option>
-        <ion-option value="09">ט</ion-option>
-        <ion-option value="10">י</ion-option>
-        <ion-option value="11">יא</ion-option>
-        <ion-option value="12">יב</ion-option>
+      <ion-select (ionChange)="handleSelectDafChange(audioPlayer)" interface='action-sheet'>
+        <ion-option value="03" *ngFor="let page of tractatePages" >{{page}}</ion-option>
       </ion-select>
     </ion-item>
-  <audio #audioPlayer controls>
-    <source src="http://download.kolavrohom.com/Eruvin/06.mp3" type='audio/mp3' >
-      <p>Your browser doesn't support HTML5 audio. Here is a <a href="http://download.kolavrohom.com/Eruvin/06.mp3">link to the audio</a> instead.</p>
-  </audio>
+      <audio id="audio-player" #audioPlayer controls>
+          <source src="http://download.kolavrohom.com/Eruvin/06.mp3" type='audio/mp3' >
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="http://download.kolavrohom.com/Eruvin/06.mp3">link to the audio</a> instead.</p>
+      </audio>
 </ion-content>
