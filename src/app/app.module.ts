@@ -9,31 +9,16 @@ import { HomePage } from '../pages/home/home';
 import {TractatesPage} from '../pages/tractates/tractates';
 import {TractatePage} from '../pages/tractate/tractate';
 
-import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import { TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-  }
-
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TractatesPage,
-    TractatePage
+    TractatePage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    TranslateModule.forRoot({
-      loader: {
-           provide: TranslateLoader,
-           useFactory: (createTranslateLoader),
-           deps: [HttpClient]
-         }
-      })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
