@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {TractatesPage} from '../pages/tractates/tractates';
 import {TractatePage} from '../pages/tractate/tractate';
+import { GematriyaProvider } from '../providers/gematriya/gematriya';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {TractatePage} from '../pages/tractate/tractate';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GematriyaProvider
   ]
 })
 export class AppModule {}
