@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class GematriyaProvider {
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello GematriyaProvider Provider');
   }
 
