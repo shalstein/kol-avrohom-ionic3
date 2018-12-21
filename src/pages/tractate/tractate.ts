@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import gematriya from 'js-gematriya';
+import dafConverter from 'daf-converter';
 /**
  * Generated class for the TractatePage page.
  *
@@ -25,7 +25,7 @@ export class TractatePage {
   generateTractatePages = (lastPage) => {
     const pages = []
     for(let i = 2; i <= lastPage; i++){
-      pages.push(gematriya(i, {punctuate: false}))
+      pages.push(dafConverter(i))
     }
     return pages
   }
@@ -36,12 +36,12 @@ export class TractatePage {
     console.log(this.tractatePages)
   }
 
-  currentDaf = '2';
+  currentPage = '2';
 
   lastPage = 9;
 
   handleDafInputChange = (event) => {
-    this.currentDaf = event.target.value;
+    this.currentPage = event.target.value;
   }
 
   handleSelectDafChange = audioPlayer => audioPlayer.play();

@@ -16,8 +16,8 @@
 <ion-content padding>
     <ion-item>
       <ion-label >דף</ion-label> 
-      <ion-select (ionChange)="handleSelectDafChange(audioPlayer)" interface='action-sheet'>
-        <ion-option value="03" *ngFor="let page of tractatePages" >{{page}}</ion-option>
+      <ion-select [(ngModel)]="currentPage" (ionChange)="handleSelectDafChange(audioPlayer)" interface='action-sheet'>
+        <ion-option *ngFor="let page of tractatePages" >{{page}}</ion-option>
       </ion-select>
     </ion-item>
       <audio id="audio-player" #audioPlayer controls>
