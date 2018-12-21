@@ -17,7 +17,7 @@
     <ion-item>
       <ion-label >דף</ion-label> 
       <ion-select [(ngModel)]="currentPage" (ionChange)="handleSelectDafChange(audioPlayer)" interface='action-sheet'>
-        <ion-option *ngFor="let page of tractatePages" >{{page}}</ion-option>
+        <ion-option [value]="i | pageOptionValue" *ngFor="let page of tractatePages; let i = index;" >{{page}}</ion-option>
       </ion-select>
     </ion-item>
       <audio id="audio-player" #audioPlayer controls>

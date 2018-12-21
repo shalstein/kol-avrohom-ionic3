@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { PageOptionValuePipe } from './page-option-value/page-option-value';
 @NgModule({
-	declarations: [],
+	declarations: [PageOptionValuePipe],
 	imports: [],
-	exports: []
+	exports: [PageOptionValuePipe]
 })
 export class PipesModule {}

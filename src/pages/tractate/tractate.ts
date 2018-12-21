@@ -33,12 +33,11 @@ export class TractatePage {
 
   ionViewDidLoad() {
     this.tractatePages = this.generateTractatePages(this.lastPage);
-    console.log(this.tractatePages)
   }
 
-  currentPage = '2';
+  currentPage = '22';
 
-  lastPage = 9;
+  lastPage = 22;
 
   handleDafInputChange = (event) => {
     this.currentPage = event.target.value;

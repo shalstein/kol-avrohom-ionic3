@@ -9,12 +9,14 @@ import { HomePage } from '../pages/home/home';
 import {TractatesPage} from '../pages/tractates/tractates';
 import {TractatePage} from '../pages/tractate/tractate';
 
+import {PageOptionValuePipe} from '../pipes/page-option-value/page-option-value';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TractatesPage,
     TractatePage,
+    PageOptionValuePipe
   ],
   imports: [
     BrowserModule,
