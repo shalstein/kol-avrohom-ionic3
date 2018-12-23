@@ -35,15 +35,16 @@ export class TractatePage {
     this.tractatePages = this.generateTractatePages(this.lastPage);
   }
 
-  currentPage = '22';
+  currentPage = '02';
 
   lastPage = 22;
 
-  handleDafInputChange = (event) => {
-    this.currentPage = event.target.value;
+  tractateTest = 'Succah';
+  handleSelectDafChange = audioPlayer => {
+    audioPlayer.src = `http://download.kolavrohom.com/${this.tractateTest}/${this.currentPage}.mp3`
+    audioPlayer.play();
+  
   }
-
-  handleSelectDafChange = audioPlayer => audioPlayer.play();
   
 
 }
