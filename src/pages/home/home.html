@@ -1,16 +1,30 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color='primary'>
     <ion-title>
       Kol Avrohom
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-  <ion-content padding>
+  <ion-content >
     <ion-list>
+
+      <ion-item-group>
+        <ion-item-divider color='light'>Daf Yomi</ion-item-divider>
+
+          <button ion-item>Todays daf</button>
+          <button ion-item>Tommrows's daf</button>
+          <button ion-item>yeserdays's daf</button>
+      </ion-item-group>
+
+
+      <ion-item-group>
+      <ion-item-divider color="light">Sedarim</ion-item-divider>
+
         <button (click)="handleSederClick(seder)" *ngFor="let seder of sedarim" ion-item >
               {{ seder }}
         </button>
+      </ion-item-group>
     </ion-list>
   </ion-content>
   
