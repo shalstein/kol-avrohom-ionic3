@@ -1,17 +1,35 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar >
     <ion-title>
       Kol Avrohom
     </ion-title>
   </ion-navbar>
+    <div id='toolbar-border'></div>
+      <div class="button-container">
+        <button color='dark' block clear  ion-button  id="daf-yomi">
+        DAF YOMI
+      </button>
+      <div id="button-divider"></div>
+      <button clear block ion-button id="select-daf" >
+        SELECT A DAF
+      </button>
+
+    </div>
+    <div id="bottom-border"></div>
 </ion-header>
 
-  <ion-content padding>
+  <ion-content>
+
     <ion-list>
-        <button (click)="handleSederClick(seder)" *ngFor="let seder of sedarim" ion-item >
+         <!-- <button (click)="handleSederClick(seder)" *ngFor="let seder of sedarim" ion-item >
               {{ seder }}
-        </button>
+        </button>   -->
+      <button full color='light' ion-button>Today's Daf</button>
+        <button full color='light' ion-button>Tommrow's Daf</button>
+        <button full color='light' ion-button>Yeseterday's Daf</button> 
+        
     </ion-list>
+    <!-- <button ion-button full color='light'>Select a Daf</button> -->
   </ion-content>
   
   <ion-footer>
