@@ -6,6 +6,7 @@ page-home {
     .button-container {
         display: flex;
         background-color: rgb(248, 248, 248);
+        margin-bottom: 1em;
 
     }
     .button-container > button {
@@ -15,9 +16,7 @@ page-home {
 
 
     }
-    .button-container {
-        margin-bottom: 1em;
-    }
+    
     .daf-yomi-button-container > button{
         width: 95%;
         margin: 0.9em auto;

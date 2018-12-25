@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{currentSeder}}</ion-title>
+    <ion-title><h2>{{currentSeder}}</h2></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,8 +15,8 @@
 
 <ion-content padding>
   <ion-list >
-    <button (click)="handleTractateClick(mesechta)" ion-item *ngFor="let mesechta of mesechtos[currentSeder]">
-      {{mesechta}}
+    <button text-center (click)="handleTractateClick(mesechta)" ion-item *ngFor="let mesechta of mesechtos[currentSeder]">
+      <strong>{{mesechta}}</strong>
     </button>
   </ion-list>
 </ion-content>

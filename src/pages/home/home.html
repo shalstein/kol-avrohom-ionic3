@@ -20,18 +20,17 @@
       </button>
 
     </div>
-    <!-- <div id="bottom-border"></div> -->
 </div>
     <ion-list *ngIf="!isDafYomiCurrentTab">
-         <button ion-item block outline (click)="handleSederClick(seder)" *ngFor="let seder of sedarim"  >
-              {{ seder }}
+         <button padding-right padding-left ion-item text-center  block outline (click)="handleSederClick(seder)" *ngFor="let seder of sedarim"  >
+              <strong>{{ seder }}</strong>
         </button>  
     </ion-list>
     <ion-list *ngIf="isDafYomiCurrentTab">
       <div class="daf-yomi-button-container" >
-        <button block outline color='secondary'  ion-button>Today's Daf</button>
-        <button block outline color='secondary' ion-button>Tommrow's Daf</button>
-        <button block outline color='secondary' ion-button>Yeseterday's Daf</button> 
+        <button block outline color='secondary'  ion-button><strong>Today's Daf</strong></button>
+        <button block outline color='secondary' ion-button><strong>Tommrow's Daf</strong></button>
+        <button block outline color='secondary' ion-button><strong>Yeseterday's Daf</strong></button> 
         </div>
     </ion-list>
   </ion-content>

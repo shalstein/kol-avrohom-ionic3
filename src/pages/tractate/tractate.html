@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{tractate}}</ion-title>
+    <ion-title><h2>{{tractate}}</h2></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +17,7 @@
     <ion-item>
       <ion-label >דף</ion-label> 
       <ion-select [(ngModel)]="currentPage" (ionChange)="handleSelectDafChange(audioPlayer)" interface='action-sheet'>
-        <ion-option [value]="i | pageOptionValue" *ngFor="let page of tractatePages; let i = index;" >{{page}}</ion-option>
+        <ion-option [value]="i | pageOptionValue" *ngFor="let page of tractatePages; let i = index;" ><strong>{{page}}</strong></ion-option>
       </ion-select>
     </ion-item>
       <audio id="audio-player" #audioPlayer controls>
