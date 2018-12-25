@@ -17,11 +17,15 @@ export class HomePage {
     this.navCtrl.push(TractatesPage, {seder: seder});
   }
 
-  currentTab = 'dafYomi';
+  isDafYomiCurrentTab = true;
 
    handleTabClick = (button) => {
      
-     this.currentTab = button._elementRef.nativeElement.name
-     console.log(this.currentTab);
+     if(button._elementRef.nativeElement.name ===  'dafYomi') {
+     this.isDafYomiCurrentTab = true;
+    }
+     else {
+       this.isDafYomiCurrentTab = false;
+     }
    }
 }

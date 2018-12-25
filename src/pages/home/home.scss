@@ -18,9 +18,10 @@ page-home {
     .button-container {
         margin-bottom: 1em;
     }
-    #select-daf {
+    .daf-yomi-button-container > button{
+        width: 95%;
+        margin: 0.9em auto;
     }
-
     #button-divider {
         border-right: 0.1em solid rgba(0, 0, 0, 0.3);
         height: 3em;

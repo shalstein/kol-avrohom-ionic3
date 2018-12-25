@@ -11,27 +11,29 @@
 <div id='custom-segement'>
       <div id='toolbar-border'></div>
       <div class="button-container">
-        <button #dafYomi [style.border-bottom-color]="currentTab === 'dafYomi' ? 'blue' : 'transparent'"  (click)='handleTabClick(dafYomi)' color='primary' full  clear name='dafYomi'  ion-button  id="daf-yomi">
+        <button #dafYomi [style.border-bottom-color]=" isDafYomiCurrentTab ? 'blue' : 'transparent'"  (click)='handleTabClick(dafYomi)' color='primary' full  clear name='dafYomi'  ion-button  id="daf-yomi">
         DAF YOMI
       </button>
       <div id="button-divider"></div>
-      <button #selectDaf [style.border-bottom-color]="currentTab === 'selectDaf' ? 'blue' : 'transparent'" (click)='handleTabClick(selectDaf)' [name]="'selectDaf'" color='primary' full clear  ion-button id="select-daf" >
+      <button #selectDaf [style.border-bottom-color]="!isDafYomiCurrentTab ? 'blue' : 'transparent'" (click)='handleTabClick(selectDaf)' [name]="'selectDaf'" color='primary' full clear  ion-button id="select-daf" >
         SELECT A DAF
       </button>
 
     </div>
     <!-- <div id="bottom-border"></div> -->
 </div>
-    <ion-list>
-         <!-- <button (click)="handleSederClick(seder)" *ngFor="let seder of sedarim" ion-item >
+    <ion-list *ngIf="!isDafYomiCurrentTab">
+         <button ion-item block outline (click)="handleSederClick(seder)" *ngFor="let seder of sedarim"  >
               {{ seder }}
-        </button>   -->
-      <button full color='light'  ion-button>Today's Daf</button>
-        <button full color='light' ion-button>Tommrow's Daf</button>
-        <button full color='light' ion-button>Yeseterday's Daf</button> 
-        
+        </button>  
     </ion-list>
-    <!-- <button ion-button full color='light'>Select a Daf</button> -->
+    <ion-list *ngIf="isDafYomiCurrentTab">
+      <div class="daf-yomi-button-container" >
+        <button block outline color='secondary'  ion-button>Today's Daf</button>
+        <button block outline color='secondary' ion-button>Tommrow's Daf</button>
+        <button block outline color='secondary' ion-button>Yeseterday's Daf</button> 
+        </div>
+    </ion-list>
   </ion-content>
   
   <ion-footer>
