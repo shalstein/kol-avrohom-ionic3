@@ -16,4 +16,12 @@ export class HomePage {
     console.log('clicked ' + seder)
     this.navCtrl.push(TractatesPage, {seder: seder});
   }
+
+  currentTab = 'dafYomi';
+
+   handleTabClick = (button) => {
+     
+     this.currentTab = button._elementRef.nativeElement.name
+     console.log(this.currentTab);
+   }
 }
