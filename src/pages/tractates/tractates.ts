@@ -24,7 +24,6 @@ export class TractatesPage {
 
   
   ionViewDidLoad() {
-    console.log(this.navParams.get('seder'))
     this.currentSeder = this.navParams.get('seder');
   }
 
@@ -32,7 +31,7 @@ export class TractatesPage {
 
   mesechtos = {זרעים: ['ברכות'], מועד: ['שבת', 'עירובין', 'פסחים' , 'ראש השנה', '	יומא', 'סוכה', 'ביצה', 'תענית', 'מגילה', 'מועד קטן',   'חגיגה'], נשים: ['יבמות', 'כתובות', 'נדרים', 'נזיר', 'סוטה', 'גיטין', 'קידושין'  ], נזקין: ['בבא קמא', 'בבא מציעא', 'בבא בתרא', 'סנהדרין', 'מכות', 'שבועות', 'עבודה זרה', 'הוריות' ], קדשים: ['זבחים', 'מנחות', 'חולין', 'בכורות', 'ערכין', 'תמורה', 'כריתות', 'מעילה', ], טהרות: ['נידה']}
 
-  handleTractateClick = (tractate) => {
+  handleTractateClick = (tractate : string) : void => {
     this.navCtrl.push(TractatePage, {tractate});
   }
   

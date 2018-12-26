@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {TractatesPage} from '../tractates/tractates'
+import {TractatesPage} from '../tractates/tractates';
+import {TractatePage} from '../tractate/tractate';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -27,5 +28,11 @@ export class HomePage {
      else {
        this.isDafYomiCurrentTab = false;
      }
+   }
+
+   handleDafYomiButtonClick = (day : string) : void => {
+      const tractate = 'חגיגה';
+      const pageValue = '15';
+      this.navCtrl.push(TractatePage, {tractate, pageValue})
    }
 }

@@ -21,7 +21,7 @@
       </ion-select>
     </ion-item>
       <audio id="audio-player" #audioPlayer controls>
-          <source src="http://download.kolavrohom.com/Eruvin/06.mp3" type='audio/mp3' >
-            <p>Your browser doesn't support HTML5 audio. Here is a <a href="http://download.kolavrohom.com/Eruvin/06.mp3">link to the audio</a> instead.</p>
+          <source [src]="this.audioURL" type='audio/mp3' >
+            <p>Your browser doesn't support HTML5 audio. Here is a <a [href]="this.audioURL">link to the audio</a> instead.</p>
       </audio>
 </ion-content>
