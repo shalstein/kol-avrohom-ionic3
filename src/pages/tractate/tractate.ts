@@ -24,11 +24,8 @@ export class TractatePage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.currentPage = '02';
-    this.tractate = this.navParams.get('tractate');
-    this.tractateEnglishName = this.tractatesMetadata[this.tractate].name 
-    console.log(this.currentPage + 'consturcter')
-    this.audioURL = `http://download.kolavrohom.com/${this.tractateEnglishName}/${this.currentPage}.mp3`;
+    // this.currentPage = '02';
+
   }
 
 
@@ -52,12 +49,17 @@ export class TractatePage {
   }
 
   ionViewDidLoad() {
+    this.tractate = this.navParams.get('tractate');
+    this.tractateEnglishName = this.tractatesMetadata[this.tractate].name 
+    this.currentPage = '02'
+    this.audioURL = `http://download.kolavrohom.com/${this.tractateEnglishName}/${this.currentPage}.mp3`;
     this.tractatePages = this.generateTractatePages(this.tractatesMetadata[this.tractate].lastPage);
     const pageValueParam = this.navParams.get('pageValue');
     if (pageValueParam) {
       this.currentPage = pageValueParam;
       this.handleSelectDafChange(this.audioPlayer.nativeElement)
-    } 
+    }
+
   }
 
 
