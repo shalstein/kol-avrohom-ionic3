@@ -32,7 +32,11 @@ export class HomePage {
 
    handleDafYomiButtonClick = (day : string) : void => {
       const tractate = 'חגיגה';
-      const pageValue = '15';
-      this.navCtrl.push(TractatePage, {tractate, pageValue})
+      let pageValue = 19;
+      if (day === 'yesterday') {
+        pageValue--
+      }
+      console.log(pageValue)
+      this.navCtrl.push(TractatePage, {tractate, pageValue: '' + pageValue})
    }
 }

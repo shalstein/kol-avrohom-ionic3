@@ -16,13 +16,19 @@ import dafConverter from 'daf-converter';
 export class TractatePage {
   @ViewChild('audioPlayer') audioPlayer : ElementRef
   tractate : string;
+  tractateEnglishName : string;
   tractatePages = [];
   currentPage : string;
   audioURL : string;
 
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.currentPage = '02';
     this.tractate = this.navParams.get('tractate');
+    this.tractateEnglishName = this.tractatesMetadata[this.tractate].name 
+    console.log(this.currentPage + 'consturcter')
+    this.audioURL = `http://download.kolavrohom.com/${this.tractateEnglishName}/${this.currentPage}.mp3`;
   }
 
 
@@ -41,24 +47,17 @@ export class TractatePage {
   
 
   handleSelectDafChange = audioPlayer => {
-    const tractateName = this.tractatesMetadata[this.tractate].name 
-    this.audioURL = `http://download.kolavrohom.com/${tractateName}/${this.currentPage}.mp3`;
+    this.audioURL = `http://download.kolavrohom.com/${this.tractateEnglishName}/${this.currentPage}.mp3`;
     audioPlayer.play();
-  
   }
 
   ionViewDidLoad() {
     this.tractatePages = this.generateTractatePages(this.tractatesMetadata[this.tractate].lastPage);
-    if (this.currentPage = this.navParams.get('pageValue')) {
-      this.handleSelectDafChange(this.audioPlayer.nativeElement)      
-      } 
-    else {
-      const tractateName = this.tractatesMetadata[this.tractate].name 
-      this.currentPage = '02';
-      this.audioURL = `http://download.kolavrohom.com/${tractateName}/${this.currentPage}.mp3`;
-
-    }
-
+    const pageValueParam = this.navParams.get('pageValue');
+    if (pageValueParam) {
+      this.currentPage = pageValueParam;
+      this.handleSelectDafChange(this.audioPlayer.nativeElement)
+    } 
   }
 
 
