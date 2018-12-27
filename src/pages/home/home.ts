@@ -11,12 +11,16 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
+  
+  dumbPageValue = 19;
   sedarim = ['זרעים', 'מועד', 'נשים', 'נזקין', 'קדשים', 'טהרות' ];
 
   handleSederClick = (seder) => {
     console.log('clicked ' + seder)
     this.navCtrl.push(TractatesPage, {seder: seder});
   }
+
+
 
   isDafYomiCurrentTab = true;
 
@@ -32,7 +36,10 @@ export class HomePage {
 
    handleDafYomiButtonClick = (day : string) : void => {
       const tractate = 'חגיגה';
-      const pageValue = '15';
-      this.navCtrl.push(TractatePage, {tractate, pageValue})
+      if (day === 'yesterday') {
+        this.dumbPageValue--
+      }
+      console.log( this.dumbPageValue)
+      this.navCtrl.push(TractatePage, {tractate, pageValue: '' +  this.dumbPageValue})
    }
 }
