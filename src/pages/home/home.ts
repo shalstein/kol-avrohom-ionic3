@@ -26,7 +26,7 @@ export class HomePage {
 
    handleTabClick = (button) => {
      
-     if(button._elementRef.nativeElement.name ===  'dafYomi') {
+     if(button._elementRef.nativeElement.name === 'dafYomi') {
      this.isDafYomiCurrentTab = true;
     }
      else {

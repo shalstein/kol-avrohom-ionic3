@@ -10,6 +10,7 @@ import {TractatesPage} from '../pages/tractates/tractates';
 import {TractatePage} from '../pages/tractate/tractate';
 
 import {PageOptionValuePipe} from '../pipes/page-option-value/page-option-value';
+import { DafYomiCalculaterProvider } from '../providers/daf-yomi-calculater/daf-yomi-calculater';
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +34,8 @@ import {PageOptionValuePipe} from '../pipes/page-option-value/page-option-value'
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DafYomiCalculaterProvider,
   ]
 })
 export class AppModule {}
