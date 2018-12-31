@@ -15,7 +15,6 @@ export class HomePage {
   constructor(public navCtrl: NavController, private dafYomiCalculater : DafYomiCalculaterProvider) {
   }
   
-  dumbPageValue = 19;
   sedarim = ['זרעים', 'מועד', 'נשים', 'נזקין', 'קדשים', 'טהרות' ];
 
   handleSederClick = (seder) => {
@@ -42,10 +41,10 @@ export class HomePage {
      }
    }
 
-   handleDafYomiButtonClick = (tractate : object) : void => {
-      // const tractate = 'חגיגה';
-      
-      console.log( this.dumbPageValue)
-      this.navCtrl.push(TractatePage, {tractate, pageValue: '' +  this.dumbPageValue})
+   handleDafYomiButtonClick = (tractate ) : void => {
+     console.log(tractate)
+      const tractatateName = tractate.tractateName;
+      const pageValuePrefix = tractate.pageNumber <= 9 ? '0' : '';
+      this.navCtrl.push(TractatePage, {tractate: tractatateName, pageValue: pageValuePrefix + tractate.pageNumber})
    }
 }

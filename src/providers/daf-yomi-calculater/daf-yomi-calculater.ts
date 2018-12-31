@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import dafConverter from 'daf-converter';
 /*
   Generated class for the DafYomiCalculaterProvider provider.
 
@@ -127,7 +126,7 @@ export class DafYomiCalculaterProvider {
 
   tractateNumber = i;
   pageNumber = days + 2;
-  return {tractateName: tractateMeta[tractateNumber].name, pageNumber: dafConverter(pageNumber)}
+  return {tractateName: tractateMeta[tractateNumber].name, pageNumber: pageNumber}
 
   }
 

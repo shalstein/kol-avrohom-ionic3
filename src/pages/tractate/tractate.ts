@@ -24,6 +24,7 @@ export class TractatePage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
     this.tractate = this.navParams.get('tractate');
   }
 
