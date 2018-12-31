@@ -28,9 +28,9 @@
     </ion-list>
     <ion-list *ngIf="isDafYomiCurrentTab">
       <div class="daf-yomi-button-container" >
-        <button block outline color='secondary' (click)="handleDafYomiButtonClick('today')" name='today' ion-button><strong>Today's Daf</strong></button>
-        <button block outline color='secondary' (click)="handleDafYomiButtonClick('tomorrow')"  name='tomorrow' ion-button><strong>Tomorrow's Daf</strong></button>
-        <button block outline color='secondary' (click)="handleDafYomiButtonClick('yesterday')"  name='yesterday' ion-button><strong>Yeseterday's Daf</strong></button> 
+        <button block outline color='secondary' (click)="handleDafYomiButtonClick(todaysTractate)" name='today' ion-button><strong>Today's Daf - {{todaysTractate.tractateName}} {{todaysTractate.pageNumber}} </strong></button>
+        <button block outline color='secondary' (click)="handleDafYomiButtonClick('tomorrow')"  name='tomorrow' ion-button><strong>Tomorrow's Daf - {{tomorrowsTractate.tractateName}} {{tomorrowsTractate.pageNumber}} </strong></button>
+        <button block outline color='secondary' (click)="handleDafYomiButtonClick('yesterday')"  name='yesterday' ion-button><strong>Yeseterday's Daf - {{yesterdaysTractate.tractateName}} {{yesterdaysTractate.pageNumber}}</strong></button> 
         </div>
     </ion-list>
 

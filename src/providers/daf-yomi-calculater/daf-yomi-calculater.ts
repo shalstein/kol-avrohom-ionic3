@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import dafConverter from 'daf-converter';
 /*
   Generated class for the DafYomiCalculaterProvider provider.
 
@@ -10,12 +9,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DafYomiCalculaterProvider {
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello DafYomiCalculaterProvider Provider');
   }
 
 
-  calcDafYomiToday(add) {
+  calculateDafYomiToday(add) {
 
   function fromJSDate(d) { 
     return { y: d.getFullYear(), m: d.getMonth() + 1, d: d.getDate() };
@@ -28,14 +27,12 @@ export class DafYomiCalculaterProvider {
   function last_day_of_gregorian_month(month, year) {
       const month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
       const ym400 = year % 400;
-      if (month == 2 &&
-    (year % 4) == 0 &&
-    ym400 != 100 &&
-    ym400 != 200 &&
-    ym400 != 300)
-    return 29;
-      else
-    return month_days[month - 1];
+      if (month == 2 && (year % 4) == 0 && ym400 != 100 && ym400 != 200 && ym400 != 300){
+        return 29
+      }
+      else {
+        return month_days[month - 1];
+      }
   }
 
   function abs_from_gregorian(date) {
@@ -107,8 +104,8 @@ export class DafYomiCalculaterProvider {
     {pages: 72, name: 'נידה'},
   ];
 
-  let tractate_number;
-  let page_number;
+  let tractateNumber;
+  let pageNumber;
   const thisDate = new Date();
   thisDate.setDate(thisDate.getDate() + add);
 
@@ -122,15 +119,15 @@ export class DafYomiCalculaterProvider {
     days -= tractateMeta[i].pages;
     i++;
     if (i > tractateMeta.length) {
-      tractate_number = 0;
-      page_number = -1;
+      tractateNumber = 0;
+      pageNumber = -1;
       break;
     }
   }
 
-  tractate_number = i;
-  page_number = days + 2;
-  return {tractate: tractateMeta[tractate_number].name, page_number}
+  tractateNumber = i;
+  pageNumber = days + 2;
+  return {tractateName: tractateMeta[tractateNumber].name, pageNumber: dafConverter(pageNumber)}
 
   }
 
