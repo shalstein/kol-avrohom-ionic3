@@ -43,8 +43,8 @@ export class HomePage {
 
    handleDafYomiButtonClick = (tractate ) : void => {
      console.log(tractate)
-      const tractatateName = tractate.tractateName;
+      const tractateName = tractate.tractateName;
       const pageValuePrefix = tractate.pageNumber <= 9 ? '0' : '';
-      this.navCtrl.push(TractatePage, {tractate: tractatateName, pageValue: pageValuePrefix + tractate.pageNumber})
+      this.navCtrl.push(TractatePage, {tractate: tractateName, pageValue: pageValuePrefix + tractate.pageNumber})
    }
 }

@@ -9,7 +9,6 @@ import { Injectable } from '@angular/core';
 export class DafYomiCalculaterProvider {
 
   constructor() {
-    console.log('Hello DafYomiCalculaterProvider Provider');
   }
 
 

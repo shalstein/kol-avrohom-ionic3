@@ -10,6 +10,8 @@ import {TractatesPage} from '../pages/tractates/tractates';
 import {TractatePage} from '../pages/tractate/tractate';
 
 import {PageOptionValuePipe} from '../pipes/page-option-value/page-option-value';
+import {GematriaPipe} from '../pipes/gematria/gematria';
+
 import { DafYomiCalculaterProvider } from '../providers/daf-yomi-calculater/daf-yomi-calculater';
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { DafYomiCalculaterProvider } from '../providers/daf-yomi-calculater/daf-
     HomePage,
     TractatesPage,
     TractatePage,
-    PageOptionValuePipe
+    PageOptionValuePipe,
+    GematriaPipe,
   ],
   imports: [
     BrowserModule,
