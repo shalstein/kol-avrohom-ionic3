@@ -18,7 +18,6 @@ export class HomePage {
   sedarim = ['זרעים', 'מועד', 'נשים', 'נזקין', 'קדשים', 'טהרות' ];
 
   handleSederClick = (seder) => {
-    console.log('clicked ' + seder)
     this.navCtrl.push(TractatesPage, {seder: seder});
   }
   ionViewDidLoad = () => {
@@ -42,7 +41,6 @@ export class HomePage {
    }
 
    handleDafYomiButtonClick = (tractate ) : void => {
-     console.log(tractate)
       const tractateName = tractate.tractateName;
       const pageValuePrefix = tractate.pageNumber <= 9 ? '0' : '';
       this.navCtrl.push(TractatePage, {tractate: tractateName, pageValue: pageValuePrefix + tractate.pageNumber})

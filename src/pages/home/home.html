@@ -1,5 +1,8 @@
 <ion-header>
-  <ion-navbar color='primary' >
+  <ion-navbar  >
+      <button  menuToggle  ion-button >
+          <ion-icon name='menu'></ion-icon>
+      </button>
     <ion-title>
       Kol Avrohom
     </ion-title>
@@ -7,20 +10,24 @@
 
 </ion-header>
 
-  <ion-content>
-<div id='custom-segement'>
-      <div id='toolbar-border'></div>
-      <div class="button-container">
-        <button #dafYomi [style.border-bottom-color]=" isDafYomiCurrentTab ? 'blue' : 'transparent'"  (click)='handleTabClick(dafYomi)' color='primary' full  clear name='dafYomi'  ion-button  id="daf-yomi">
-        DAF YOMI
-      </button>
-      <div id="button-divider"></div>
-      <button #selectDaf [style.border-bottom-color]="!isDafYomiCurrentTab ? 'blue' : 'transparent'" (click)='handleTabClick(selectDaf)' [name]="'selectDaf'" color='primary' full clear  ion-button id="select-daf" >
-        SELECT A DAF
-      </button>
 
+
+<ion-content>
+
+
+  <div id='custom-segement'>
+        <div id='toolbar-border'></div>
+        <div class="button-container">
+          <button #dafYomi [style.border-bottom-color]=" isDafYomiCurrentTab ? 'blue' : 'transparent'"  (click)='handleTabClick(dafYomi)' color='primary' full  clear name='dafYomi'  ion-button  id="daf-yomi">
+          DAF YOMI
+        </button>
+      <div id="button-divider"></div>
+        <button #selectDaf [style.border-bottom-color]="!isDafYomiCurrentTab ? 'blue' : 'transparent'" (click)='handleTabClick(selectDaf)' [name]="'selectDaf'" color='primary' full clear  ion-button id="select-daf" >
+          SELECT A DAF
+        </button>
+
+      </div>
     </div>
-</div>
     <ion-list *ngIf="!isDafYomiCurrentTab">
          <button padding-right padding-left ion-item text-center  block outline (click)="handleSederClick(seder)" *ngFor="let seder of sedarim"  >
               <strong>{{ seder }}</strong>
@@ -34,6 +41,17 @@
         </div>
     </ion-list>
 
+
+
+<ion-menu  [content]="mycontent">
+    <ion-content>
+      <ion-list>
+        <p>some menu content, could be list items</p>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-nav #mycontent [root]="rootPage"></ion-nav>
 
   </ion-content>
   
