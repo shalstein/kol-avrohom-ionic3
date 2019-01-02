@@ -12,6 +12,7 @@ export class HomePage {
   todaysTractate = {};
   yesterdaysTractate = {};
   tomorrowsTractate = {};
+
   constructor(public navCtrl: NavController, private dafYomiCalculater : DafYomiCalculaterProvider) {
   }
   

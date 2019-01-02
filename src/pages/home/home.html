@@ -10,7 +10,7 @@
 
 </ion-header>
 
-
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
 
 <ion-content>
 
@@ -43,17 +43,32 @@
 
 
 
-<ion-menu  [content]="mycontent">
-    <ion-content>
-      <ion-list>
-        <p>some menu content, could be list items</p>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  
-  <ion-nav #mycontent [root]="rootPage"></ion-nav>
+      
+      <ion-menu type="overlay" [content]="mycontent">
+        <ion-content>
+          <ion-list>
+              <button ion-button icon-end >
+                  Phone Numbers
+                 <ion-icon name="call"></ion-icon>
+             </button>
+
+             <button ion-button icon-end>
+                About
+                <ion-icon name="information-circle"></ion-icon>
+              </button>
+
+              <button ion-button icon-end >
+                  Email
+                  <ion-icon name="mail"></ion-icon>
+              </button>
+
+          </ion-list>
+        </ion-content>
+      </ion-menu>
 
   </ion-content>
+
+
   
   <ion-footer>
     <ion-toolbar>
