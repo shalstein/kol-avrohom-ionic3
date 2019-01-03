@@ -44,23 +44,23 @@
 
 
       
-      <ion-menu type="overlay" [content]="mycontent">
+      <ion-menu persistent='true' type='reveal' [content]="mycontent">
         <ion-content>
-          <ion-list>
-              <button ion-button icon-end >
-                  Phone Numbers
-                 <ion-icon name="call"></ion-icon>
-             </button>
+          <ion-list no-border >
+            <ion-item >
+                <ion-icon ion-start color="primary"  name="call"></ion-icon>
+                Phone Numbers
+            </ion-item>
 
-             <button ion-button icon-end>
+            <ion-item>
+                <ion-icon color="primary"  name="information-circle"></ion-icon>
                 About
-                <ion-icon name="information-circle"></ion-icon>
-              </button>
+            </ion-item>
 
-              <button ion-button icon-end >
-                  Email
-                  <ion-icon name="mail"></ion-icon>
-              </button>
+            <ion-item>
+                <ion-icon color="primary" name="mail"></ion-icon>
+                Email
+            </ion-item>
 
           </ion-list>
         </ion-content>
@@ -70,7 +70,7 @@
 
 
   
-  <ion-footer>
+  <!-- <ion-footer>
     <ion-toolbar>
       <ion-buttons id="footer-buttons"  >
 
@@ -91,4 +91,4 @@
         </button>
       </ion-buttons>
     </ion-toolbar>
-  </ion-footer>
+  </ion-footer> -->
